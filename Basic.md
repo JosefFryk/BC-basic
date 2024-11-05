@@ -128,14 +128,14 @@
     
 # 🔴 Základní objekty 
 ---
-### 🟢 Tables
-### 🟢 TableExts
-### 🟢 Pages
-### 🟢 PageExts
-### 🟢 Codeunits
-### 🟢 Reports
-### 🟢 Queries
-### 🟢 PermissionSet
+## 🟡 Tables
+## 🟡 TableExts
+## 🟡 Pages
+## 🟡 PageExts
+## 🟡 Codeunits
+## 🟡 Reports
+## 🟡 Queries
+## 🟡 PermissionSet
  ```javascript
  //  příklad PermissionSet
 
@@ -156,8 +156,8 @@ permissionset 51001 "CHVL General"
 
 # 🔴 Pokročilé témata
 ---
-### 🟢 Error handling
-### 🟢 Transaction isolations and tri-state locking
+## 🟡 Error handling
+## 🟡 Transaction isolations and tri-state locking
 
 #### History
     Since its port to SQL server from native database, Navision used to implement a pessimistic locking,
