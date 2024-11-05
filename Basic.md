@@ -128,13 +128,50 @@
     
 # 🔴 Základní objekty 
 ---
-### Tables
-### TableExts
-### Pages
-### PageExts
-### Codeunits
-### Reports
-### Queries
+### 🟢 Tables
+### 🟢 TableExts
+### 🟢 Pages
+### 🟢 PageExts
+### 🟢 Codeunits
+### 🟢 Reports
+### 🟢 Queries
+### 🟢 PermissionSet
+ ```javascript
+ //  příklad PermissionSet
+
+permissionset 51001 "CHVL General"
+{
+    Assignable = true;
+    ExcludedPermissionSets = "CHVL Sales VIP";
+
+    IncludedPermissionSets = "CHVL SalesPermission";
+
+    Permissions =
+        ;
+}
+```
+---
+    při vytváření permission setů většinou využíváme nový objekt, ale je možné použít i permissionSetExt, zde je ale možné použít pouze exclude permission sets
+
+
+# 🔴 Pokročilé témata
+---
+### 🟢 Error handling
+### 🟢 Transaction isolations and tri-state locking
+
+#### History
+    Since its port to SQL server from native database, Navision used to implement a pessimistic locking,
+     enforced by the application, with Serialize isolation lavel for all transactions that were accessing the same resource after a Modify, Insert or Delete.
+
+     With a specific platform hotfix for Dynamics Nav 5.0 SP1 and from Dynamics NAV 2009 SP1, Microsoft slightly open to less locking scenarios where it was possible to opt for Repeatable Read isolation level instead. And this became the transaction isolation level up to now.
+
+     From Dynamics 365 Business Central 2023 Wave 2 (version 23.x), Microsoft is finally opening to enable Read Committed as main transaction isolation level for object resource concurrency. This has also been called and mostly known as tri-state locking.
+
+#### Tri-state locking
+    Tri-state locking is in feature preview with Dynamics 365 Business central 2023 Wave 2 (version 23.x)
+    and it is reversible (it could be turned on and off at will). In newly created environments with 23.0 and onwards, this feature is turned ON by default while environment upgraded from previous versions it is turned off by default
+
+![alt text](./images/image.png)
 
 
 
