@@ -16,6 +16,7 @@
 ## 🟡 Codeunits
 ## 🟡 Reports
 ## 🟡 Queries
+## 🟡 Enums
 ## 🟡 PermissionSet
 ## 🟡 EventSubscribers
 # 🔴 Pokročilé témata
@@ -23,4 +24,5 @@
 ## 🟡 Transaction isolations and tri-state locking
 ## 🟡 Debugging
 ## 🟡 DotNet changes / Streams
+## 🟡 Interface
 

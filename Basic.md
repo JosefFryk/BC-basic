@@ -129,14 +129,132 @@
 # 🔴 Základní objekty 
 ---
 ## 🟡 Tables
+### 🟢 table properties
+- TableType - Normal (výchozí), Temporary
+    - Temp vs Normal  - temporary většinou slouží k dočasnému zpracování velkých objemů dat bez vlivu na výkon databáze
+- DataClassification 
+### 🟢 příklady polí
+```C#
+// Int pole
+        field(1; "TestField"; Integer)
+        {
+            Caption = 'MyField';
+            ToolTip = 'specifiation';
+            DataClassification = CustomerContent;
+        }
+
+// tableRelation
+        field(3; "TestTableRelation"; Code[10])
+        {
+            Caption = 'TestTableRelation';
+            DataClassification = CustomerContent;
+            TableRelation = if (EnumTest = filter(EnumTest::Customer)) Customer else
+            if (EnumTest = filter(EnumTest::Vendor)) Vendor else
+            if (EnumTest = filter(EnumTest::"Purchase Invoice")) "Purch. Inv. Header" else
+            if (EnumTest = filter(EnumTest::"Sales Cr. Memo")) "Sales Cr.Memo Header" else
+            if (EnumTest = filter(EnumTest::"Purchase Cr. Memo")) "Purch. Cr. Memo Hdr.";
+
+        }
+    
+// flowfield
+        field(4; TestFlowField; Code[20])
+        {
+            Caption = 'TestFlowField';
+            FieldClass = FlowField;
+            Editable = false;
+            CalcFormula = lookup("Sales Header"."No." where("Dimension Set ID" = field(TestField)));
+        }
+``` 
+### 🟢 Field triggers
+- OnLookup 
+- OnValidate 
+### 🟢 FlowField types
+| FlowField type 	|                 Field type                	|                             Description                            	|   	|   	|
+|:--------------:	|:-----------------------------------------:	|:------------------------------------------------------------------:	|---	|---	|
+| Sum            	| Decimal, Integer, BigInteger, or Duration 	| The sum of a specified set in a column in a table.                 	|   	|   	|
+| Average        	| Decimal, Integer, BigInteger, or Duration 	| The average value of a specified set in a column in a table.       	|   	|   	|
+| Exist          	| Boolean                                   	| Indicates whether any records exist in a specified set in a table. 	|   	|   	|
+| Count          	| Integer                                   	| The number of records in a specified set in a table.               	|   	|   	|
+| Min            	| Any                                       	| The minimum value in a column in a specified set in a table.       	|   	|   	|
+| Max            	| Any                                       	| The maximum value in a column in a specified set in a table.       	|   	|   	|
+| Lookup         	| Any                                       	| Looks up a value in a column in another table.                     	|   	|   	|
+---
+### 🟢 Keys
+-maximální počet 40
+
+#### Primary key
+Primární klíče hrají zásadní roli při jednoznačné identifikaci každého záznamu v tabulce. Definováním primárního klíče vývojáři zajišťují integritu dat a usnadňují rychlou manipulaci s daty a jejich vyhledávání.
+#### Secondary key
+Sekundární klíče naproti tomu vytvářejí indexy v jazyce SQL, které umožňují efektivní vyhledávání a získávání dat. Lze je definovat jak v table objektech, tak v table extension. Sekundární klíče navíc nabízejí další úroveň integrity dat tím, že vynucují jedinečnost v konkrétních polích.
+#### Clustered Property
+Clusterový index určuje fyzické pořadí ukládání dat na disku, což usnadňuje rychlejší přístup a vyhledávání. 
+#### Unique Property
+Toto omezení zajišťuje, že hodnoty v polích klíče zůstanou jedinečné, a zabraňuje tak duplikaci dat.
+```C#
+    keys
+    {
+        key(PK; "TestField")
+        {
+            Clustered = true;
+        }
+        key(SecondaryKey; "EnumTest", TestTableRelation)
+        {
+        }
+    }
+```
+### 🟢table trigger
+- OnDelete
+- OnInsert
+- OnModify
+- OnRename
 ## 🟡 TableExts
+
 ## 🟡 Pages
+### 🟢 Field triggers
+- OnLookup - Multiselect, Drop-down list, Lookup list
 ## 🟡 PageExts
 ## 🟡 Codeunits
 ## 🟡 Reports
 ## 🟡 Queries
+## 🟡 Enums
+- nahradily OptionMembers 
+- stavající enums se dají rozšiřovat pomocí extension, pokud je dovoleno
+```C#
+// příklad Enum
+enum 51000 TestEnum
+{
+    Extensible = true;
+
+    value(0; Customer)
+    {
+    }
+    value(1; Vendor)
+    {
+    }
+    value(2; "Purchase Invoice")
+    {
+    }
+    value(3; "Sales Cr. Memo")
+    {
+    }
+    value(4; "Purchase Cr. Memo")
+    {
+    }
+}
+```
+---
+```C#
+// příklad EnumExtension
+enumextension 51000 TestEnumExt extends "Attachment Document Type"
+{
+    value(51000; PDF)
+    {
+        Caption = 'PDF';
+    }
+}
+```
 ## 🟡 PermissionSet
- ```javascript
+ ```C#
  //  příklad PermissionSet
 
 permissionset 51001 "CHVL General"
@@ -146,8 +264,8 @@ permissionset 51001 "CHVL General"
 
     IncludedPermissionSets = "CHVL SalesPermission";
 
-    Permissions =
-        ;
+    Permissions = table TestTable = X,
+                tabledata TestTable = RIMD;
 }
 ```
 ---
@@ -176,6 +294,7 @@ permissionset 51001 "CHVL General"
 ![alt text](./images/image.png)
 
 ## 🟡 DotNet changes / Streams BC
+## 🟡 Interface
 
 
 
