@@ -1,6 +1,7 @@
 # 🔴 Zkopírování repository z DevOps
 # 🔴 Stáhnutí symbolů 
 ## 🟡 Popis launch.json
+## 🟡 Popis app.json
 # 🔴 Nástroje před vytvoření základních objektů 
 ## 🟡 Namespace
 ## 🟡 Vytváření pomocí snippet
@@ -16,9 +17,10 @@
 ## 🟡 Reports
 ## 🟡 Queries
 ## 🟡 PermissionSet
+## 🟡 EventSubscribers
 # 🔴 Pokročilé témata
 ## 🟡 Error handling
 ## 🟡 Transaction isolations and tri-state locking
 ## 🟡 Debugging
-
+## 🟡 DotNet changes / Streams
 

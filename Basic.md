@@ -40,7 +40,7 @@
     ]
 }
 ```
-
+## 🟡 Popis app.json
 
 # 🔴 Nástroje před vytvoření základních objektů 
 ---
@@ -153,6 +153,8 @@ permissionset 51001 "CHVL General"
 ---
     při vytváření permission setů většinou využíváme nový objekt, ale je možné použít i permissionSetExt, zde je ale možné použít pouze exclude permission sets
 
+## 🟡 EventSubscribers
+
 
 # 🔴 Pokročilé témata
 ---
@@ -173,6 +175,7 @@ permissionset 51001 "CHVL General"
 
 ![alt text](./images/image.png)
 
+## 🟡 DotNet changes / Streams BC
 
 
 
