@@ -13,6 +13,7 @@
 ---
     3. automaticky se vytvoří launch.json
 ---
+## 🟡 Popis workspace
 ## 🟡 Popis launch.json
 ```json
     {
@@ -429,13 +430,77 @@ actions
 ![alt text](./images/RC.png)
 
 ## 🟡 PageExts
-    TODO: připravit rozšíření sales order plus event na účtování, třeba ne kontrolu dimenzí
+    
 ## 🟡 Codeunits
-- při používání Codeunit pro EventSubscribers rozdělovat CU na Handler a Mgmt
+- při používání Codeunit pro EventSubscribers rozdělovat CU na Handler a Mgmt - EventSubscriberInstace = Manual / Automatic
+- singleInstace CU
+-
 
 ## 🟡 Reports
 - nejčastější použití pro sestavy, opravu dat
 ## 🟡 Queries
+- Query object generguje sigle sql dotaz, pro generování velkého množství dat
+- může být typu API nebo Normal // API může být publikován pro různé webové služby
+- lze exportovat to XML nebo CSV souboru - pomocí SaveAsXml nebo SaveAsCsv pomocí outstream
+- podporuje spojování různýcj tabulek pomocí SqlJoinType, existují také filtrační a agregační funkce
+- pro použití Query objektu v kódu, je třeba použít funkci Open k přístupu query a funkci Read pro přečtení dat z query
+- iterace v datové sadě se provádí pomocí příkazu While..Do zatím co iterace v sadě záznamů se provádí pomocí Repeat Until
+
+```sql
+// query syntax
+query 51000 VendorWithLines
+{
+    Caption = 'Vendor Query';
+    QueryType = Normal;
+
+    elements
+    {
+        dataitem(Vendor; Vendor)
+        {
+            column(No; "No.")
+            {
+
+            }
+            column(Name; Name)
+            {
+
+            }
+            column(MobilePhoneNo; "Mobile Phone No.")
+            {
+
+            }
+            column(Blocked; Blocked)
+            {
+
+            }
+            dataitem(DetailedVendorLedgEntry; "Detailed Vendor Ledg. Entry")
+            {
+                DataItemLink = "Vendor No." = Vendor."No.";
+                SqlJoinType = InnerJoin;
+
+                column(Entry_No_; "Entry No.") { }
+                column(Amount; Amount) { }
+                column(Posting_Date; "Posting Date") { }
+            }
+        }
+    }
+}
+```
+```sql
+// příklad použití query, spuštění z action
+VendorWithLines.SetRange(Blocked, VendorWithLines.Blocked::" ");
+VendorWithLines.SetFilter(Amount, '<>0');
+
+VendorWithLines.Open();
+while VendorWithLines.Read() do begin
+if not Vendor.Get(VendorWithLines.No) then
+    exit;
+
+ TempVendor := Vendor;
+ TempVendor.Insert();
+end;
+```
+
 ## 🟡 Enums
 - nahradily OptionMembers 
 - stavající enums se dají rozšiřovat pomocí extension, pokud je dovoleno
@@ -511,6 +576,9 @@ ukázka subscriber eventu
 ```
 - pro vyhledání eventu použít console příkaz Find Event
 ![alt text](./images/FindEvent.png)
+
+#### Custom Event Subscribers
+
 
 # 🔴 Pokročilé témata
 ---
