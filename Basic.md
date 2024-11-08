@@ -516,7 +516,8 @@ actions
 -
 
 ## 🟡 Reports
-- nejčastější použití pro sestavy, opravu dat
+- nejčastější použití pro sestavy, opravu dat processing only
+- reportExt
 ## 🟡 Queries
 - Query object generguje sigle sql dotaz, pro generování velkého množství dat
 - může být typu API nebo Normal // API může být publikován pro různé webové služby
