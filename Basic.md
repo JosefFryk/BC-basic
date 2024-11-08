@@ -14,6 +14,85 @@
     3. automaticky se vytvoří launch.json
 ---
 ## 🟡 Popis workspace
+- Ukládat a obnovovat stav uživatelského rozhraní spojený s daným pracovním prostorem (například otevřené soubory).
+
+- umožňuje seskupit různé složky projektu do jedné pracovní oblasti.
+
+Translated with DeepL.com (free version)
+```json
+// syntax workspace
+{
+	"folders": [
+		{
+			"path": ".build"
+		},
+		{
+			"path": ".logs"
+		},
+		{
+			"path": ".alpackages"
+		},
+		{
+			"path": ".netpackages"
+		},
+		{
+			"path": "CHVALIS-General" // app 1
+		},
+		{
+			"path": "Tests-CHVALIS-General" // app 2
+		},
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			//"tab.inactiveBackground": "#000000",
+			//"tab.activeBackground": "#5c5c5c"
+		},
+		"al.packageCachePath": "../.alpackages", //symbols
+		"al.assemblyProbingPaths": [
+			"../.netpackages"
+		],
+		// Custom Settings:
+		"editor.codeLens": false,
+		"al.backgroundCodeAnalysis": "Project",
+		"al.enableCodeAnalysis": true,
+		"al.codeAnalyzers": [
+			"${AppSourceCop}",
+			"${CodeCop}"
+		],
+		"al.ruleSetPath": "../CHVLRuleSet.json", // RuleSet
+		"al.incrementalBuild": false,
+		"al.enableCodeActions": false,
+		"al.compilationOptions": {},
+		// CRS settings:
+		"CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+		"CRS.RenameWithGit": true,
+		// AL SOL Utils Settings:
+		"alsolutils.hyperlinks": [
+			{
+				"name": "CHVALIS DevOps: Project Work Items",
+				"url": "https://dev.azure.com/SoliteaCDL/SOL-CHVALIS/_workitems/assignedtome/"
+			}
+		],
+		"alsolutils.discoveryPaths": [],
+		"git.ignoreLimitWarning": true,
+		"al-test-runner.sendDebugTelemetry": false,
+		"alsolutils.alCompilerErrorLog": false,
+		"al.editorServicesLogLevel": "Normal"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-dynamics-smb.al",
+			"waldo.al-extension-pack",
+			"david-rickard.git-diff-and-merge-tool"
+		],
+		"unwantedRecommendations": [
+			"365businessdevelopment.bdev-al-xml-doc",
+			"rasmus.al-formatter"
+		]
+	}
+}
+```
 ## 🟡 Popis launch.json
 ```json
     {
