@@ -119,12 +119,21 @@ git merge <branch with changes>
 ## 🟡 Clone changes
 
 ### 🟢 Setting for Source control
-
+---
+#### Ingoing/Outgoing source control
+- od Tomáše
+Koho štve „Incoming/Outgoing“ graf v „Source Control“, tak to lze vypnout (zpomaluje to).
+Viz nastavení „scm.showHistoryGraph“.
+- ![alt text](/images/IngoinOutgoin1.png)
+- ![alt text](/images/IngoinOutgoin2.png)
+- ![alt text](/images/IngoinOutgoin3.png)
+---
+#### Source control - only modified objects
+TODO:
 
 ## 🟡 First commit
 
 ## 🟡 View History using Azure Repos web interface
-
 ## 🟡 Working with branches
 
 ## 🟡 Tagging a release
