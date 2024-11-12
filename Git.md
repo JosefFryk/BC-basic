@@ -74,6 +74,11 @@ git brach --track <new branch> origin/<base-branch>
 //nebo
 git checkout --track origin/<base branch>
 ```
+- lehčí synchronizace mezi local a remote branch
+- DevOps PR rovnou nabídne změny z local branch při publikování
+
+Synchronizace local a remote branch
+- ![alt text](image.png)
 ### 🟢 Pulling + Pushing branches
 ```
 git pull
