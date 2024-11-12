@@ -73,8 +73,8 @@ git push -u origin <local branch>
 git brach --track <new branch> origin/<base-branch>
 //nebo
 git checkout --track origin/<base branch>
-
 ```
+- při vytváření pomocí UI tracking je automatické
 ## 🟡 Clone changes
 
 ### 🟢 Setting for Source control
