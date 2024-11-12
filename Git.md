@@ -113,8 +113,13 @@ git merge <branch with changes>
 - merging vyvola merge commit, musíme poskytnout commit message
 ![alt text](/images/MergingBranches.png)
 ### 🟢 Rebasing branches
-- stejné jako merging branches, s tím,že graf je pak přímá linka
+- stejné jako merging branches, s tím,že historie je pak přímá linka
 ![alt text](/images/RebasingBranches.png)
+
+### 🟢 Comparing branches
+```
+git log <main branch>..<compare branch>
+```
 
 ## 🟡 Clone changes
 
@@ -129,8 +134,7 @@ Viz nastavení „scm.showHistoryGraph“.
 - ![alt text](/images/IngoinOutgoin3.png)
 ---
 #### Source control - only modified objects
-TODO:
-
+- Setting "git.openDiffOnClick": false and "scm.defaultViewMode": "tree"
 ## 🟡 First commit
 
 ## 🟡 View History using Azure Repos web interface
