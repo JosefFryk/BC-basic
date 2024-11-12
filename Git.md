@@ -73,7 +73,13 @@ git push -u origin <local branch>
 git brach --track <new branch> origin/<base-branch>
 //nebo
 git checkout --track origin/<base branch>
+```
+### 🟢 Pulling + Pushing branches
+```
+git pull
+git push
 
+git branch -v
 ```
 ## 🟡 Clone changes
 
