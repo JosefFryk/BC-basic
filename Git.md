@@ -79,6 +79,7 @@ git checkout --track origin/<base branch>
 
 Synchronizace local a remote branch
 - ![alt text](image.png)
+- ![alt text](image.png)
 ### 🟢 Pulling + Pushing branches
 ```
 git pull
