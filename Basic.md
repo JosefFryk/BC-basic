@@ -104,9 +104,10 @@ Translated with DeepL.com (free version)
             "request": "launch", 
             "type": "al",
             "environmentType": "Sandbox", // OnPrem /  Production v pripade debuggovani
+            "environmentName": "DEV",
             "server": "https://businesscentral.dynamics.com/66765fa5-0273-49e1-b190-b8a7f3e60b9a/DEV",
             "serverInstance": "BC", 
-            "authentication": "UserPassword",
+            "authentication": "MicrosoftEntraID",
             "startupObjectId": 22,  // při vývoji se vyplatí používat
             "startupObjectType": "Page", 
             "breakOnError": "All", 
