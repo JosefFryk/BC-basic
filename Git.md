@@ -74,6 +74,13 @@ git brach --track <new branch> origin/<base-branch>
 //nebo
 git checkout --track origin/<base branch>
 ```
+### 🟢 Pulling + Pushing branches
+```
+git pull
+git push
+
+git branch -v
+```
 - při vytváření pomocí UI tracking je automatické
 ## 🟡 Clone changes
 
