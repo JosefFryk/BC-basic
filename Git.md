@@ -78,8 +78,8 @@ git checkout --track origin/<base branch>
 - DevOps PR rovnou nabídne změny z local branch při publikování
 
 Synchronizace local a remote branch
-- ![alt text](image.png)
-- ![alt text](image.png)
+- ![alt text](/images/GitStatus.png)
+- ![alt text](/images/UITracking.png)
 ### 🟢 Pulling + Pushing branches
 ```
 git pull
@@ -88,6 +88,34 @@ git push
 git branch -v
 ```
 - při vytváření pomocí UI tracking je automatické
+
+### 🟢 Deleting branches
+```
+//local branch
+git branch -d <branch name>
+```
+- většina větví je určená ke smazání
+- pokud chceme smazat local branch s úpravami, které nejsou jidne musíme použím -f
+- při smazání je dobré zkontrolovat, které větve mají společný tracking, popřípadě smazat
+```
+//remote branch
+git push origin --delete <branch name>
+```
+
+### 🟢 Merging branches
+```
+//1. zmenit head branch na tu která obdrží změny
+git switch <branch receiver>
+
+//2. použít příkaz merge s názvem větve, kde se změny nachází
+git merge <branch with changes>
+```
+- merging vyvola merge commit, musíme poskytnout commit message
+![alt text](/images/MergingBranches.png)
+### 🟢 Rebasing branches
+- stejné jako merging branches, s tím,že graf je pak přímá linka
+![alt text](/images/RebasingBranches.png)
+
 ## 🟡 Clone changes
 
 ### 🟢 Setting for Source control
