@@ -120,12 +120,29 @@ git merge <branch with changes>
 ```
 git log <main branch>..<compare branch>
 ```
+- zobrazí rozdíl commitů mezi dvěmi větvy
 
-## 🟡 Clone changes
+## 🟡 Git Stash
+- git stash poskytuje dočasné uschování změn, ke kterým se později můžeme vrátit bez toho aniž by jsme museli změny commitnout
+- nové soubory automaticky nebudou umístěny do stashe // pokud je potřeba musí se použít parametr -u
+```
+//uloží změny do stash
+git stash 
 
-### 🟢 Setting for Source control
+//odstrani poslední stash a aplikuje je do aktualniho kódu
+git stash pop
+
+// aplikování změn do kódu bez smazání stash -- pro více větví např.
+git stash apply
+
+// zobrazit stash list
+git stash list
+```
+
+
+## 🟡 Setting for Source control
 ---
-#### Ingoing/Outgoing source control
+### 🟢 Ingoing/Outgoing source control
 - od Tomáše
 Koho štve „Incoming/Outgoing“ graf v „Source Control“, tak to lze vypnout (zpomaluje to).
 Viz nastavení „scm.showHistoryGraph“.
@@ -133,14 +150,16 @@ Viz nastavení „scm.showHistoryGraph“.
 - ![alt text](/images/IngoinOutgoin2.png)
 - ![alt text](/images/IngoinOutgoin3.png)
 ---
-#### Source control - only modified objects
+### 🟢 Source control - only modified objects
 - Setting "git.openDiffOnClick": false and "scm.defaultViewMode": "tree"
 ## 🟡 First commit
 
 ## 🟡 View History using Azure Repos web interface
-## 🟡 Working with branches
 
-## 🟡 Tagging a release
+## 🟡 Git Tag
+- jsou reference commitu, na který můžeme použit příkazy checkout, diff nebo z nich udělat archiv
+- nejčastejší použití je archiv pro release kódu do produkce / testu, před přidáním nových commitů
+- TODO: foto energon tag release
 
 ## 🟡 Managing repository
 
