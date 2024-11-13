@@ -24,8 +24,10 @@ Zamykání jednotlivých souborů při změně.
     - změníme aktuální pracovní adresář na místo, kam chceme klonovaný adresář umístit
     - git clone <Your URL>
 2. použít IDE - button Clone in VS Code
-    - TODO:
-3. VSCode command pallet - TODO:
+    1. automaticky nám spustí VSCode
+    2. vybere místo uložení
+    3. otevřeme adresář přes workspace
+3. VSCode command pallet
 4. SHH - připojení pomocí public/private klíče 
 
 ## 🟡 Branches
@@ -80,6 +82,9 @@ git checkout --track origin/<base branch>
 Synchronizace local a remote branch
 - ![alt text](/images/GitStatus.png)
 - ![alt text](/images/UITracking.png)
+
+- rozdíl mezi bez a s tracking
+- ![alt text](/images/trackingDiff.png)
 ### 🟢 Pulling + Pushing branches
 ```
 git pull
@@ -122,7 +127,38 @@ git log <main branch>..<compare branch>
 ```
 - zobrazí rozdíl commitů mezi dvěmi větvy
 
-## 🟡 Git Stash
+
+
+## 🟡 Source control
+---
+### 🟢 Source Control changes / stage
+![alt text](/images/StageChanges.png)
+![alt text](/images/UIStage.png)
+- v naší praxi je při rozdělování commitů trochu problém s překlady
+```
+// add all to stage
+    git add .
+    
+// add file
+    git add <fileName>
+
+// check diffrence between stage and unstage
+    git diff
+
+// bonus - přidání části kódu ze souboru - moc se nepoužívá
+git add -p <FileName>
+```
+### Commit
+- pro vytvoření nového commitu ze staged kódu
+```
+git commit
+```
+### Commit message
+- Commit msg se liší projekt od projektu 
+- stejný začátek je číslo tasků, pro který je úprava
+- ![alt text](/images/commitMsg.png)
+- ![alt text](image-2.png)
+### 🟢 Git Stash
 - git stash poskytuje dočasné uschování změn, ke kterým se později můžeme vrátit bez toho aniž by jsme museli změny commitnout
 - nové soubory automaticky nebudou umístěny do stashe // pokud je potřeba musí se použít parametr -u
 ```
@@ -138,11 +174,15 @@ git stash apply
 // zobrazit stash list
 git stash list
 ```
+#### stejné příkazy platí i pro UI || Source control -> ... -> stash
+![alt text](/images/stash.png)
 
+### 🟢 Pull Request
+- jsou poskytnuty Azure Repos, nejsou součásti gitu
+- ![alt text](/images/PRGraph.png)
 
-## 🟡 Setting for Source control
----
-### 🟢 Ingoing/Outgoing source control
+### 🟢 Settings Source Control
+#### Ingoing/Outgoing source control
 - od Tomáše
 Koho štve „Incoming/Outgoing“ graf v „Source Control“, tak to lze vypnout (zpomaluje to).
 Viz nastavení „scm.showHistoryGraph“.
@@ -150,21 +190,26 @@ Viz nastavení „scm.showHistoryGraph“.
 - ![alt text](/images/IngoinOutgoin2.png)
 - ![alt text](/images/IngoinOutgoin3.png)
 ---
-### 🟢 Source control - only modified objects
+#### Source control - only modified objects
 - Setting "git.openDiffOnClick": false and "scm.defaultViewMode": "tree"
-## 🟡 First commit
-
-## 🟡 View History using Azure Repos web interface
 
 ## 🟡 Git Tag
 - jsou reference commitu, na který můžeme použit příkazy checkout, diff nebo z nich udělat archiv
 - nejčastejší použití je archiv pro release kódu do produkce / testu, před přidáním nových commitů
 - TODO: foto energon tag release
 
-## 🟡 Managing repository
+## 🟡 Merge Conflicts
+1. proč nastávájí konflikty
+![alt text](/images/whyMergeConflict.png)
+![alt text](/images/mergeConflict1.png)
 
-## 🟡 Managing Pull request
-
-## 🟡 Conflicts
 
 ## 🟡 Cherrypicking
+- aplikování změn(commit) z jedné branch do druhé branch
+- např. ALEF master vs UAT větev 
+- pokud víme, že nenastanou konflikty při je lehčí použít DevOps UI 
+### DevOps CherryPick
+1. Na kartě commitu vybereme cherrypick
+- ![alt text](/images/cherryPick1.png)
+2. DevOps nám automaticky nabídne nově vytvořenou větev podle target branch
+- ![alt text](/images/CherryPick2.png)

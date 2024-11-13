@@ -290,6 +290,8 @@ Translated with DeepL.com (free version)
 
 ## 🟡 Others VSCode extension
 - AL SOL Utils  - [link](https://solitea.sharepoint.com/sites/P-SCDL-DYN365ERP/Tools/Forms/AllItems.aspx?id=%2Fsites%2FP%2DSCDL%2DDYN365ERP%2FTools%2FAL%5FSOL%5FUTILS&p=true&ga=1)
+#### Instalace Extensions ze souboru .vsix
+![alt text](/images/extensionInstalation.png)
 
     
 # 🔴 Základní objekty 
