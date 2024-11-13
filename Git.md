@@ -182,7 +182,11 @@ git stash list
 - ![alt text](/images/PRGraph.png)
 
 ### 🟢 Settings Source Control
-#### Ingoing/Outgoing source control
+#### 🔴 Git Graph
+- pro přehlednější práci s Git - filtrování
+![alt text](/images/GitGraph.png)
+---
+#### 🔴 Ingoing/Outgoing source control
 - od Tomáše
 Koho štve „Incoming/Outgoing“ graf v „Source Control“, tak to lze vypnout (zpomaluje to).
 Viz nastavení „scm.showHistoryGraph“.
@@ -190,13 +194,13 @@ Viz nastavení „scm.showHistoryGraph“.
 - ![alt text](/images/IngoinOutgoin2.png)
 - ![alt text](/images/IngoinOutgoin3.png)
 ---
-#### Source control - only modified objects
+#### 🔴 Source control - only modified objects
 - Setting "git.openDiffOnClick": false and "scm.defaultViewMode": "tree"
 
 ## 🟡 Git Tag
 - jsou reference commitu, na který můžeme použit příkazy checkout, diff nebo z nich udělat archiv
 - nejčastejší použití je archiv pro release kódu do produkce / testu, před přidáním nových commitů
-- TODO: foto energon tag release
+![alt text](/images/GitTag.png)
 
 ## 🟡 Merge Conflicts
 1. proč nastávájí konflikty
@@ -213,3 +217,7 @@ Viz nastavení „scm.showHistoryGraph“.
 - ![alt text](/images/cherryPick1.png)
 2. DevOps nám automaticky nabídne nově vytvořenou větev podle target branch
 - ![alt text](/images/CherryPick2.png)
+
+
+- video s cherryPick tematikou ALEF UAT 
+[Sharepoint Solitea](https://solitea.sharepoint.com/sites/P-CDL-00027/_layouts/15/stream.aspx?id=%2Fsites%2FP%2DCDL%2D00027%2FRealizace%2FVideoz%C3%A1znamy%2F%5FSeyfor%20intern%C3%AD%20prezentace%2F2024%2D05%2D05%2DNasazov%C3%A1n%C3%AD%20UAT%2FALEF%20BC%20%2D%20UAT%20%2D%20nasazov%C3%A1n%C3%AD%20%C3%BAprav%2D20240604%5F090202%2DZ%C3%A1znam%20sch%C5%AFzky%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2fefc0de%2D9113%2D40e1%2D9190%2Db24f5a9e1943)
