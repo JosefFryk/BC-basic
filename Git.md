@@ -157,7 +157,7 @@ git commit
 - Commit msg se liší projekt od projektu 
 - stejný začátek je číslo tasků, pro který je úprava
 - ![alt text](/images/commitMsg.png)
-- ![alt text](image-2.png)
+- ![alt text](/images/commitMsgEditor.png)
 ### 🟢 Git Stash
 - git stash poskytuje dočasné uschování změn, ke kterým se později můžeme vrátit bez toho aniž by jsme museli změny commitnout
 - nové soubory automaticky nebudou umístěny do stashe // pokud je potřeba musí se použít parametr -u
